@@ -14,4 +14,7 @@ RitlyApp::Application.routes.draw do
   post "/signup", to: "users#create"
   get "/user/:id", to: "users#show"
 
+  get "/signin", to: "sessions#new"
+  post "/signin", to: "sessions#create"
+
 end
