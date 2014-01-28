@@ -11,5 +11,5 @@
 #
 
 class User < ActiveRecord::Base
-	has_secure_password
+	has_secure_password          #make password and password_confirmation attributes to User object 
 end
