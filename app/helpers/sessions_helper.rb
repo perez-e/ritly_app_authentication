@@ -1,5 +1,5 @@
 module SessionsHelper
-	def sign_in(user)
+def sign_in(user)
     cookies.permanent[:remember_token] = user.remember_token
     # current_user is avilable in controllers and views!
     # This is an is an assignment, which we must define - see below
@@ -20,7 +20,7 @@ def signed_in_user
         # to be able to redirect after successful sign in.
         session[:return_to] = request.url
         # prompt sign in page
-        redirect_to signin_url, notice: "Please sign in."
+        redirect_to "/signin", notice: "Please sign in."
     end
 end
 
@@ -40,4 +40,13 @@ end
 def current_user
     @current_user ||= User.find_by_remember_token(cookies[:remember_token])
 end
+
+def user_name
+    @current_user.name 
+end
+
+def path_user
+    "/user/#{@current_user.id}"
+end
+
 end

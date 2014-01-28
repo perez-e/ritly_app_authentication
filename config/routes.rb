@@ -16,5 +16,6 @@ RitlyApp::Application.routes.draw do
 
   get "/signin", to: "sessions#new"
   post "/signin", to: "sessions#create"
+  delete "/", to: "sessions#destroy"
 
 end

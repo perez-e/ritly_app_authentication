@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	before_filter :signed_in_user, only: [:show]
 	def new
 	end
 
@@ -12,11 +13,11 @@ class UsersController < ApplicationController
 
 		if user.save
 	      flash[:notice] = "Welcome to the Ritly app!"
-	      # sign_in user
+	      sign_in user
 	      redirect_to action: :show, id: user.id
 	    else
 	   	  flash[:notice] = "You are not created!!"
-	      render'new'
+	      render 'new'
 	    end
 
 	end

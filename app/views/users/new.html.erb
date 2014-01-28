@@ -1,3 +1,5 @@
+   <%= render "layouts/indexnav" %>
+  <div class="index">
   <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
@@ -25,3 +27,5 @@
 
 	<%= f.submit "Sign Up!", class: "btn btn-default btn-color" %>
 <% end %>
+
+<div>

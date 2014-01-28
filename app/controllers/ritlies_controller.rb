@@ -1,5 +1,5 @@
 class RitliesController < ApplicationController
-  before_filter :signed_in_user, only: [:create, :new, :edit, :update]
+  before_filter :signed_in_user, only: [:create, :new, :edit, :update, :destroy, :show, :all]
   
   def index
   end

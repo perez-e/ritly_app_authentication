@@ -1,6 +1,9 @@
+   <%= render "layouts/indexnav" %>
+ <div class="index">
   <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
   <% end %>
 
-  <%= @user.name %>
-  <%= @user.email %>
+  <h2>Hello, <%= @user.name %>!</h2>
+  <h3>Email: <%= @user.email %></h2>
+</div>
